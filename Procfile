@@ -1,0 +1,1 @@
+web: gunicorn borabams.wsgi --log-file -

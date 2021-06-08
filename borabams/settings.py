@@ -12,6 +12,7 @@ https://docs.djangoproject.com/en/3.2/ref/settings/
 
 from pathlib import Path
 import os
+import dj_database_url
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -23,7 +24,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-%qeys!)%jb%8)2sc*%_a_ar23#5*f=hka_2(3z59=woinvt(%5'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ['borabams.com', 'localhost', '127.0.0.1']
 
@@ -43,6 +44,7 @@ INSTALLED_APPS = [
 ]
 
 MIDDLEWARE = [
+    'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
@@ -143,4 +145,13 @@ EMAIL_PORT = 587
 EMAIL_USE_TLS = True
 
 AUTHENTICATION_BACKENDS = ['social_core.backends.facebook.FacebookOAuth2', 'social_core.backends.google.GoogleOAuth2']
+
+PROJECT_ROOT = os.path.join(os.path.abspath(__filr__))
+
+STATICFILES_DIRS = (
+    os.path.join(PROJECT_ROOT, 'static')
+)
+STATICFILES_STORAGE = 'whitenoise.django.GzipManifestStaticFilesStorage'
+prod_db = dj_database_url.config(conn_max=500)
+DATABASES['default'].update(prod_db)
 
