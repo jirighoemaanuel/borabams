@@ -146,7 +146,7 @@ EMAIL_USE_TLS = True
 
 AUTHENTICATION_BACKENDS = ['social_core.backends.facebook.FacebookOAuth2', 'social_core.backends.google.GoogleOAuth2']
 
-PROJECT_ROOT = os.path.join(os.path.abspath(__filr__))
+PROJECT_ROOT = os.path.join(os.path.abspath(__file__))
 
 STATICFILES_DIRS = (
     os.path.join(PROJECT_ROOT, 'static')
