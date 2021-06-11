@@ -148,9 +148,6 @@ AUTHENTICATION_BACKENDS = ['social_core.backends.facebook.FacebookOAuth2', 'soci
 
 PROJECT_ROOT = os.path.join(os.path.abspath(__file__))
 
-STATICFILES_DIRS = (
-    os.path.join(PROJECT_ROOT, 'static')
-)
 STATICFILES_STORAGE = 'whitenoise.django.GzipManifestStaticFilesStorage'
 prod_db = dj_database_url.config(conn_max=500)
 DATABASES['default'].update(prod_db)
