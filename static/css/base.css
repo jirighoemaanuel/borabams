@@ -7,6 +7,25 @@
     text-decoration:none;
 }
 
+
+#create_acc {
+    color: black;
+}
+
+#create_acc:hover {
+    color: rgb(12, 247, 12);
+}
+
+
+#password_set {
+    color: #34baeb;
+}
+
+#password_set:hover {
+    color: green;
+}
+
+
 #forgotpass:hover {
     color:#00a74f;
 }

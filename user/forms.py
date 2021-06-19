@@ -1,6 +1,15 @@
 from django import forms
+from django.contrib.auth import models
 from django.contrib.auth.models import User
+from django.contrib.auth.forms import PasswordResetForm
 
+
+class MyPasswordResetForm(forms.Form):
+    email = forms.EmailField(widget=forms.EmailInput(attrs={
+                                             'placeholder': "Enter Your email",
+                                             'id': "email",
+                                             'name': 'email'}))
+    
 
 class LoginForm(forms.Form):
     username = forms.CharField(widget=forms.TextInput(attrs={

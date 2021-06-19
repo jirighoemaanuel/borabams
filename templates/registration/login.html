@@ -8,10 +8,9 @@
         <section class="sign-in">
             <div class="container replace">
                 <div class="signin-content">
-                    <div class="signin-image">
+                    <!-- <div class="signin-image">
                         <figure><img src="{% static 'img/service-cargo-bg.png' %}" alt="sing up image"></figure>
-                        <a href="{% url 'register'%}" class="signup-image-link">Create an account</a>
-                    </div>
+                    </div> -->
 
                     <div class="signin-form">
                         <h2 class="form-title">Sign In</h2>
@@ -37,7 +36,9 @@
                             </p>
                         {% endfor %}
                         {% endif %}
-                        <p><a href="{% url 'password_reset' %}" id="forgotpass">Forgotten your password?</a></p>
+                        <p><a href="{% url 'password_reset' %}" id="create_acc">Forgotten your password?</a></p>
+                        <p><a href="{% url 'register'%}" id="forgotpass">Create an account</a></p>
+
                         <div class="social-login">
                             <span class="social-label">Or login with</span>
                             <ul class="socials">
