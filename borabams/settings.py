@@ -143,7 +143,10 @@ EMAIL_HOST_PASSWORD = 'flyiyfqpshwlpxth'
 EMAIL_PORT = 587
 EMAIL_USE_TLS = True
 
-AUTHENTICATION_BACKENDS = ['social_core.backends.facebook.FacebookOAuth2', 'social_core.backends.google.GoogleOAuth2']
+AUTHENTICATION_BACKENDS = [
+                            'django.contrib.auth.backends.ModelBackend',
+                            'social_core.backends.facebook.FacebookOAuth2',
+                            'social_core.backends.google.GoogleOAuth2']
 
 PROJECT_ROOT = os.path.join(os.path.abspath(__file__))
 
